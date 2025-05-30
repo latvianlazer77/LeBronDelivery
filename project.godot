@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LEBRON DELIVERY"
-run/main_scene="uid://dcd7r10daw63n"
+run/main_scene="uid://cx8rdp8it11v1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,7 +24,7 @@ ProjectUISoundController="*res://addons/maaacks_menus_template/base/scenes/autol
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/maaacks_menus_template/plugin.cfg")
+enabled=PackedStringArray()
 
 [internationalization]
 

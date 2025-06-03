@@ -1,5 +1,18 @@
-[gd_scene format=3 uid="uid://bjwshja6xei4m"]
+[gd_scene load_steps=3 format=3 uid="uid://bjwshja6xei4m"]
+
+[ext_resource type="VideoStream" uid="uid://6cdiqfk4jjlf" path="res://Untitled design.ogv" id="1_bgl3h"]
+[ext_resource type="Script" uid="uid://h0vfargvyj1v" path="res://lbj.gd" id="2_3g27x"]
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = -1
+anchor_right = 0.556
+anchor_bottom = 0.556
+offset_right = 511.488
+offset_bottom = 287.712
+stream = ExtResource("1_bgl3h")
+volume_db = -0.65
+autoplay = true
+expand = true
+script = ExtResource("2_3g27x")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

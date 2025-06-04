@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://wercq5w2wl8u"]
+
+[ext_resource type="Texture2D" uid="uid://d0afglp7mgro6" path="res://Super Mango Platformer Assets by JuhoSprite/legun.png" id="1_n112m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpw4h"]
+atlas = ExtResource("1_n112m")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmpeq"]
+atlas = ExtResource("1_n112m")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jksr5"]
+atlas = ExtResource("1_n112m")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofw80"]
+atlas = ExtResource("1_n112m")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rc2kg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpw4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmpeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jksr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofw80")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LeNPC" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_rc2kg")
+frame_progress = 0.171328

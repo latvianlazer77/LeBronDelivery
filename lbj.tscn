@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://h0vfargvyj1v" path="res://lbj.gd" id="2_3g27x"]
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer"]
+texture_filter = 1
 anchors_preset = -1
 anchor_right = 0.556
 anchor_bottom = 0.556

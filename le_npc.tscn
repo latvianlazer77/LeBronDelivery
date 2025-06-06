@@ -2,25 +2,28 @@
 
 [ext_resource type="Texture2D" uid="uid://d0afglp7mgro6" path="res://Super Mango Platformer Assets by JuhoSprite/legun.png" id="1_n112m"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tpw4h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n112m"]
 atlas = ExtResource("1_n112m")
 region = Rect2(0, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qmpeq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpw4h"]
 atlas = ExtResource("1_n112m")
 region = Rect2(32, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jksr5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmpeq"]
 atlas = ExtResource("1_n112m")
 region = Rect2(64, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ofw80"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jksr5"]
 atlas = ExtResource("1_n112m")
 region = Rect2(96, 0, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rc2kg"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n112m")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tpw4h")
 }, {
@@ -29,9 +32,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jksr5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ofw80")
 }],
 "loop": true,
 "name": &"default",
@@ -42,5 +42,7 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(-18, 20)
 sprite_frames = SubResource("SpriteFrames_rc2kg")
-frame_progress = 0.171328
+autoplay = "default"
+flip_h = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6t233rbqwxjq"
+path="res://.godot/imported/FlightReacts Lebron.mp3-06939aace9a1c379be7822bb8513a74a.mp3str"
+
+[deps]
+
+source_file="res://FlightReacts Lebron.mp3"
+dest_files=["res://.godot/imported/FlightReacts Lebron.mp3-06939aace9a1c379be7822bb8513a74a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

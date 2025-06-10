@@ -15,9 +15,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 
-func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Dialogue"):
-		DialogueManager.show_example_dialogue_balloon(load("res://dialogue.dialogue"))
 		
 		
 	# Get the input direction and handle the movement/deceleration.

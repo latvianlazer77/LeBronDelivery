@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://dcd7r10daw63n"]
+[gd_scene load_steps=11 format=4 uid="uid://dcd7r10daw63n"]
 
 [ext_resource type="Texture2D" uid="uid://ddhexhx15cbt8" path="res://Tiles/Tiles/Assets/Assets.png" id="1_2c62f"]
 [ext_resource type="PackedScene" uid="uid://cpidoau74qw4t" path="res://player.tscn" id="2_gyfs4"]
 [ext_resource type="Texture2D" uid="uid://blijg2bcw4is0" path="res://Tiles/Tiles/Assets/Background_2.png" id="3_gyfs4"]
 [ext_resource type="Texture2D" uid="uid://drxlm4fsp2id5" path="res://image-removebg-preview (3).png" id="4_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://wercq5w2wl8u" path="res://le_npc.tscn" id="5_hq1ik"]
+[ext_resource type="Script" uid="uid://cm8qdg0ahjtvo" path="res://le_npc.gd" id="6_hq1ik"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8mm7a"]
 texture = ExtResource("3_gyfs4")
@@ -1003,3 +1004,4 @@ texture = ExtResource("4_8mm7a")
 
 [node name="LeNPC" parent="." instance=ExtResource("5_hq1ik")]
 position = Vector2(101, -60)
+script = ExtResource("6_hq1ik")

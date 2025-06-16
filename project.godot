@@ -17,12 +17,8 @@ config/icon="uid://ckjqhu4g013lv"
 
 [autoload]
 
-AppConfig="*res://addons/maaacks_menus_template/base/scenes/autoloads/app_config.tscn"
-SceneLoader="*res://addons/maaacks_menus_template/base/scenes/autoloads/scene_loader.tscn"
-ProjectMusicController="*res://addons/maaacks_menus_template/base/scenes/autoloads/project_music_controller.tscn"
-ProjectUISoundController="*res://addons/maaacks_menus_template/base/scenes/autoloads/project_ui_sound_controller.tscn"
-GGS="*res://addons/ggs/plugin/singleton/ggs.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Music="*res://music.tscn"
 
 [editor_plugins]
 

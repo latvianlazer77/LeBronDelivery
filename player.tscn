@@ -105,7 +105,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_urp6f"]
@@ -124,8 +124,9 @@ zoom = Vector2(3.7, 3.7)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_onrkg")
-animation = &"crouch"
+animation = &"run"
 autoplay = "crouch"
+frame_progress = 0.00325235
 
 [node name="Normal" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

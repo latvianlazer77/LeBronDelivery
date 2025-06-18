@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dcd7r10daw63n"]
+[gd_scene load_steps=17 format=4 uid="uid://dcd7r10daw63n"]
 
 [ext_resource type="Texture2D" uid="uid://ddhexhx15cbt8" path="res://Tiles/Tiles/Assets/Assets.png" id="1_2c62f"]
 [ext_resource type="PackedScene" uid="uid://cpidoau74qw4t" path="res://player.tscn" id="2_gyfs4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://drxlm4fsp2id5" path="res://image-removebg-preview (3).png" id="4_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://wercq5w2wl8u" path="res://le_npc.tscn" id="5_hq1ik"]
 [ext_resource type="Script" uid="uid://cm8qdg0ahjtvo" path="res://le_npc.gd" id="6_hq1ik"]
+[ext_resource type="Texture2D" uid="uid://dvb7pk53nuam8" path="res://SimpleKeys/SimpleKeys/Classic/Light/Spritesheets/E.png" id="7_66tet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8mm7a"]
 texture = ExtResource("3_gyfs4")
@@ -999,6 +1000,31 @@ texture = ExtResource("1_2c62f")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_d5x1h")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ycvg"]
+atlas = ExtResource("7_66tet")
+region = Rect2(0, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr18j"]
+atlas = ExtResource("7_66tet")
+region = Rect2(17, 0, 17, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qwutr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ycvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wr18j")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66tet"]
+size = Vector2(30, 41)
+
 [node name="Main Scene" type="Node2D"]
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
@@ -1032,5 +1058,22 @@ texture = ExtResource("4_8mm7a")
 position = Vector2(101, -60)
 script = ExtResource("6_hq1ik")
 
+[node name="E" type="AnimatedSprite2D" parent="LeNPC"]
+visible = false
+texture_filter = 1
+position = Vector2(-39, 21)
+sprite_frames = SubResource("SpriteFrames_qwutr")
+autoplay = "default"
+frame = 1
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="LeNPC"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeNPC/Area2D"]
+position = Vector2(-19, 23.5)
+shape = SubResource("RectangleShape2D_66tet")
+
 [node name="Player" parent="." instance=ExtResource("2_gyfs4")]
 position = Vector2(53, -111)
+
+[connection signal="area_entered" from="LeNPC/Area2D" to="LeNPC" method="_on_area_2d_area_entered"]

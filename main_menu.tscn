@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cx8rdp8it11v1"]
+[gd_scene load_steps=14 format=3 uid="uid://cx8rdp8it11v1"]
 
 [ext_resource type="Theme" uid="uid://tov66oq4gbks" path="res://lebrontheme.tres" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://ckjqhu4g013lv" path="res://lebrun.png" id="1_glbon"]
 [ext_resource type="Script" uid="uid://b8xnpreht11fe" path="res://main_menu.gd" id="1_jix8l"]
 [ext_resource type="FontFile" uid="uid://bk2frgbrkj3f6" path="res://kings-of-kings-lynn/KingsofKingsLynn.otf" id="2_7vrkn"]
+[ext_resource type="Script" uid="uid://dwf1n0thjveku" path="res://music_control.gd" id="5_glbon"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qtwp"]
 bg_color = Color(1, 0.819608, 0.317647, 1)
@@ -19,6 +20,13 @@ border_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
 bg_color = Color(1, 0.819608, 0.317647, 1)
 shadow_size = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jix8l"]
+color = Color(1, 1, 1, 1)
+thickness = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
+bg_color = Color(1, 0.819608, 0.317647, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy7ct"]
 bg_color = Color(0.541176, 0.439216, 0.564706, 1)
@@ -121,6 +129,27 @@ theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
 text = "back"
 
+[node name="MusicControl" type="HSlider" parent="options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -91.0
+offset_right = 203.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_jix8l")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_nlkkf")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_nlkkf")
+min_value = -50.0
+max_value = 0.0
+script = ExtResource("5_glbon")
+audio_bus_name = "Music"
+
 [node name="main buttons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -138,6 +167,7 @@ theme = ExtResource("1_06t4h")
 theme_override_constants/separation = 20
 
 [node name="start" type="Button" parent="main buttons"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
@@ -147,6 +177,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_dy7ct")
 text = "Start"
 
 [node name="options" type="Button" parent="main buttons"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
@@ -157,6 +188,7 @@ text = "Options
 "
 
 [node name="quit" type="Button" parent="main buttons"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
@@ -167,6 +199,8 @@ text = "Quit
 "
 
 [connection signal="pressed" from="options/Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="options/MusicControl" to="." method="_on_music_control_value_changed"]
+[connection signal="value_changed" from="options/MusicControl" to="options/MusicControl" method="_on_value_changed"]
 [connection signal="pressed" from="main buttons/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="main buttons/start" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="main buttons/start" to="main buttons/start" method="_on_pressed"]

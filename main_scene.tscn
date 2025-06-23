@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=4 uid="uid://dcd7r10daw63n"]
+[gd_scene load_steps=18 format=4 uid="uid://dcd7r10daw63n"]
 
 [ext_resource type="Texture2D" uid="uid://ddhexhx15cbt8" path="res://Tiles/Tiles/Assets/Assets.png" id="1_2c62f"]
+[ext_resource type="Script" uid="uid://dc5rbi4nqcakm" path="res://main_scene.gd" id="1_7ycvg"]
 [ext_resource type="PackedScene" uid="uid://cpidoau74qw4t" path="res://player.tscn" id="2_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://dlkunybsltlht" path="res://trap.tscn" id="2_nfk4m"]
 [ext_resource type="Texture2D" uid="uid://blijg2bcw4is0" path="res://Tiles/Tiles/Assets/Background_2.png" id="3_gyfs4"]
@@ -1023,9 +1024,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66tet"]
-size = Vector2(30, 41)
+size = Vector2(47, 41)
 
 [node name="Main Scene" type="Node2D"]
+script = ExtResource("1_7ycvg")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -1059,7 +1061,6 @@ position = Vector2(101, -60)
 script = ExtResource("6_hq1ik")
 
 [node name="E" type="AnimatedSprite2D" parent="LeNPC"]
-visible = false
 texture_filter = 1
 position = Vector2(-39, 21)
 sprite_frames = SubResource("SpriteFrames_qwutr")
@@ -1070,10 +1071,11 @@ frame_progress = 1.0
 [node name="Area2D" type="Area2D" parent="LeNPC"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeNPC/Area2D"]
-position = Vector2(-19, 23.5)
+position = Vector2(-27.5, 23.5)
 shape = SubResource("RectangleShape2D_66tet")
 
 [node name="Player" parent="." instance=ExtResource("2_gyfs4")]
 position = Vector2(53, -111)
 
+[connection signal="area_entered" from="LeNPC/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="LeNPC/Area2D" to="LeNPC" method="_on_area_2d_area_entered"]

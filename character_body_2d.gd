@@ -91,7 +91,6 @@ func play_animation():
 		State.IDLE: animated_sprite.play("idle")
 		State.RUNNING: animated_sprite.play("run")
 		State.JUMPING: animated_sprite.play("jump")
-		State.FALLING: animated_sprite.play("fall")
 		State.CROUCHING: animated_sprite.play("crouch")
 
 func jump():

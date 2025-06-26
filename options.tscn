@@ -1,0 +1,148 @@
+[gd_scene load_steps=10 format=3 uid="uid://ddv2cjlcpdikw"]
+
+[ext_resource type="FontFile" uid="uid://bk2frgbrkj3f6" path="res://kings-of-kings-lynn/KingsofKingsLynn.otf" id="1_ao2gm"]
+[ext_resource type="Script" uid="uid://dwf1n0thjveku" path="res://music_control.gd" id="2_07a1d"]
+[ext_resource type="Script" uid="uid://c7nn4b2sskjbk" path="res://music_panel.gd" id="3_p8250"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
+bg_color = Color(0.541176, 0.439216, 0.564706, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
+bg_color = Color(1, 0.819608, 0.317647, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jix8l"]
+color = Color(1, 1, 1, 1)
+thickness = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
+bg_color = Color(1, 0.819608, 0.317647, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_nlkkf"]
+color = Color(0.541176, 0.439216, 0.564706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
+bg_color = Color(1, 0.819608, 0.317647, 1)
+
+[node name="options" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -338.0
+offset_top = -236.0
+offset_right = 338.0
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jix8l")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -341.0
+offset_right = 339.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ao2gm")
+theme_override_font_sizes/font_size = 32
+text = "                                                   Options"
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -62.0
+offset_right = 92.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.541176, 0.439216, 0.564706, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_ao2gm")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
+text = "back"
+
+[node name="MusicControl" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -91.0
+offset_right = 203.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_jix8l")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_nlkkf")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_nlkkf")
+min_value = -50.0
+max_value = 0.0
+script = ExtResource("2_07a1d")
+audio_bus_name = "Music"
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.5
+offset_top = 119.0
+offset_right = 36.5
+offset_bottom = 142.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ao2gm")
+theme_override_font_sizes/font_size = 20
+text = "Music Volume"
+
+[node name="MusicPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 203.0
+offset_right = 532.0
+offset_bottom = 383.0
+theme_override_styles/panel = SubResource("StyleBoxLine_nlkkf")
+script = ExtResource("3_p8250")
+
+[node name="Label" type="Label" parent="MusicPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 129.0
+offset_top = -34.0
+offset_right = 205.0
+offset_bottom = -11.0
+theme_override_fonts/font = ExtResource("1_ao2gm")
+theme_override_font_sizes/font_size = 20
+text = "Change Song"
+
+[node name="OptionButton" type="OptionButton" parent="MusicPanel"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 20.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.710963, 0.545192, 0.622763, 1)
+theme_override_colors/font_pressed_color = Color(0.710963, 0.545192, 0.622763, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_ao2gm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qe12f")
+
+[connection signal="value_changed" from="MusicControl" to="MusicControl" method="_on_value_changed"]

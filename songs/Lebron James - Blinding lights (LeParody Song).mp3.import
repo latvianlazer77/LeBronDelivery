@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://csykpo6ooevst"
+path="res://.godot/imported/Lebron James - Blinding lights (LeParody Song).mp3-ffa8fb721755f5db378dfad734ee4429.mp3str"
+
+[deps]
+
+source_file="res://songs/Lebron James - Blinding lights (LeParody Song).mp3"
+dest_files=["res://.godot/imported/Lebron James - Blinding lights (LeParody Song).mp3-ffa8fb721755f5db378dfad734ee4429.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

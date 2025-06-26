@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvi5p1ffjinq"
+path="res://.godot/imported/ilyaugust - Bring Me Back To Bron  Lyric Video (Bring Me Back To Life parody).mp3-87278d57d4085bfddc1282e57f1424fd.mp3str"
+
+[deps]
+
+source_file="res://songs/ilyaugust - Bring Me Back To Bron  Lyric Video (Bring Me Back To Life parody).mp3"
+dest_files=["res://.godot/imported/ilyaugust - Bring Me Back To Bron  Lyric Video (Bring Me Back To Life parody).mp3-87278d57d4085bfddc1282e57f1424fd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvwpt0vu01f4m"
+path="res://.godot/imported/MAN ON THE LAKERS ( FULL SONG )  by IMAKEPARODYZZ ).mp3-185fd5c3ea9a55c1d37cf71086571f2a.mp3str"
+
+[deps]
+
+source_file="res://songs/MAN ON THE LAKERS ( FULL SONG )  by IMAKEPARODYZZ ).mp3"
+dest_files=["res://.godot/imported/MAN ON THE LAKERS ( FULL SONG )  by IMAKEPARODYZZ ).mp3-185fd5c3ea9a55c1d37cf71086571f2a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

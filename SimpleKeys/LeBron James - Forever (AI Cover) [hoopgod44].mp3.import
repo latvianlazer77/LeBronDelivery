@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vh2241g5yavv"
+path="res://.godot/imported/LeBron James - Forever (AI Cover) [hoopgod44].mp3-2c25cc78274954285ec26ed83cfd303f.mp3str"
+
+[deps]
+
+source_file="res://SimpleKeys/LeBron James - Forever (AI Cover) [hoopgod44].mp3"
+dest_files=["res://.godot/imported/LeBron James - Forever (AI Cover) [hoopgod44].mp3-2c25cc78274954285ec26ed83cfd303f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

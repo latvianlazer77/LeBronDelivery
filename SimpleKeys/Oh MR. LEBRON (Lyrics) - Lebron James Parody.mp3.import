@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fr5m7munotak"
+path="res://.godot/imported/Oh MR. LEBRON (Lyrics) - Lebron James Parody.mp3-763cc627211fafa428755bb3e265c1f6.mp3str"
+
+[deps]
+
+source_file="res://SimpleKeys/Oh MR. LEBRON (Lyrics) - Lebron James Parody.mp3"
+dest_files=["res://.godot/imported/Oh MR. LEBRON (Lyrics) - Lebron James Parody.mp3-763cc627211fafa428755bb3e265c1f6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -19,6 +19,7 @@ config/icon="uid://ckjqhu4g013lv"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Music="*res://music.tscn"
+Global="*res://global.gd"
 
 [editor_plugins]
 

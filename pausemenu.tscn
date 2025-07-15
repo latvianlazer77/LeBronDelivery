@@ -47,9 +47,9 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 100
 text = "       Paused"
 
-[node name="options" parent="." instance=ExtResource("2_bs354")]
+[node name="optionspanel" parent="." instance=ExtResource("2_bs354")]
 
-[node name="main buttons" type="VBoxContainer" parent="."]
+[node name="mainbuttons" type="VBoxContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -64,7 +64,7 @@ grow_vertical = 2
 theme = ExtResource("3_qu36y")
 theme_override_constants/separation = 20
 
-[node name="resume" type="Button" parent="main buttons"]
+[node name="resume" type="Button" parent="mainbuttons"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
@@ -73,7 +73,7 @@ theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_ifua1")
 text = "Resume"
 
-[node name="options" type="Button" parent="main buttons"]
+[node name="options" type="Button" parent="mainbuttons"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
@@ -83,7 +83,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bywfp")
 text = "Options
 "
 
-[node name="quit" type="Button" parent="main buttons"]
+[node name="quit" type="Button" parent="mainbuttons"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
@@ -93,9 +93,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ennqi")
 text = "Main Menu
 "
 
-[connection signal="pressed" from="options/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="main buttons/resume" to="main buttons/resume" method="_on_pressed"]
-[connection signal="pressed" from="main buttons/options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="main buttons/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="optionspanel/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="mainbuttons/resume" to="mainbuttons/resume" method="_on_pressed"]
+[connection signal="pressed" from="mainbuttons/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="mainbuttons/quit" to="." method="_on_quit_pressed"]
 
-[editable path="options"]
+[editable path="optionspanel"]

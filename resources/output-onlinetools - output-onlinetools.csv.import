@@ -1,0 +1,14 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://btcwyr1c8gjwo"
+
+[deps]
+
+source_file="res://resources/output-onlinetools - output-onlinetools.csv"
+
+[params]
+
+compress=true
+delimiter=0

@@ -1,9 +1,8 @@
 extends Node
 
 
-
 var current_level = 0
-var unlocked_levels = []
+var unlocked_levels = [0]  # Level 0 = Level 1
 var pause_menu = null
 
 func _ready():
@@ -30,8 +29,19 @@ func resume_game():
 	get_tree().call_group("game_objects", "set_physics_process", true)
 	
 	
-func level_completed():
-	current_level += 1
-	if current_level not in unlocked_levels:
-		unlocked_levels.append(current_level)
+func load_level(level_index: int):
+	var level_paths = [
+		"res://level_1.tscn",
+		"res://level_2.tscn",
+		"res://level_3.tscn",
+		"res://level_4.tscn",
+		"res://level_5.tscn",
+		"res://level_6.tscn",
+	]
+
+	if level_index >= 0 and level_index < level_paths.size():
+		get_tree().change_scene_to_file(level_paths[level_index])
+		current_level = level_index  # Optional: Track current level
+	else:
+		print("Invalid level index: ", level_index)
 	

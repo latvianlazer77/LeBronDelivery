@@ -1035,16 +1035,20 @@ tile_map_data = PackedByteArray("AADz//P/AAAAAAAAAADz//T/AAAAAAEAAADz//X/AAAAAAI
 tile_set = SubResource("TileSet_hq1ik")
 
 [node name="trap" parent="." instance=ExtResource("2_nfk4m")]
+visible = false
 position = Vector2(290, -12)
 
 [node name="trap3" parent="." instance=ExtResource("2_nfk4m")]
+visible = false
 position = Vector2(334, -12)
 
 [node name="trap4" parent="." instance=ExtResource("2_nfk4m")]
+visible = false
 position = Vector2(377, -12)
 
 [node name="trap2" parent="." instance=ExtResource("2_nfk4m")]
-position = Vector2(246, -12)
+visible = false
+position = Vector2(247, -12)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1

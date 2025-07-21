@@ -80,7 +80,13 @@ grow_horizontal = 1
 grow_vertical = 1
 script = ExtResource("5_qe12f")
 
+[node name="Label" parent="options/MusicPanel" index="0"]
+offset_left = 148.0
+offset_right = 224.0
+text = "Song"
+
 [node name="LanguagePanel" type="Panel" parent="options"]
+visible = false
 layout_mode = 0
 offset_left = 304.0
 offset_top = 232.0

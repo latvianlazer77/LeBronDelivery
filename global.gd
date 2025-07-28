@@ -12,7 +12,13 @@ func _ready():
 	pause_menu.visible = false
 
 func _input(event):
-	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+	if event is InputEventKey and event.pressed and event.keycode == KEY_TAB:
+		if get_tree().current_scene.name != "main_menu":
+			if pause_menu.visible:
+				resume_game()
+			else:
+				pause_game()
+	if event is InputEventKey and event.pressed and event.keycode == KEY_TAB:
 		if pause_menu.visible:
 			resume_game()
 		else:
@@ -44,4 +50,7 @@ func load_level(level_index: int):
 		current_level = level_index  # Optional: Track current level
 	else:
 		print("Invalid level index: ", level_index)
+	
+	
+	
 	

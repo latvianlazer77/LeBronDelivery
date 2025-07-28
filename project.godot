@@ -20,6 +20,11 @@ config/icon="uid://ckjqhu4g013lv"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Music="*res://music.tscn"
 Global="*res://global.gd"
+GameState="*res://GameState.gd"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [editor_plugins]
 

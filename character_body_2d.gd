@@ -9,8 +9,8 @@ enum State { IDLE, RUNNING, JUMPING, CROUCHING, FALLING }
 
 #controller variables
 
-@export var speed: float = 200.0
-@export var jump_velocity: float = -400.0
+@export var speed: float = 150.0
+@export var jump_velocity: float = -450.0
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -22,8 +22,7 @@ var has_double_jummped: bool = false
 @onready var crouch_collision = $Crouch
 @onready var animated_sprite = $AnimatedSprite2D
 
-func _ready():
-	crouch_collision.disabled = true
+
 
 func _physics_process(delta):
 	if not is_on_floor():

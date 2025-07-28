@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://oluwgxm6eca0"]
+
+[ext_resource type="Script" uid="uid://l57kmecok3ie" path="res://hud.gd" id="1_37p78"]
+[ext_resource type="FontFile" uid="uid://bk2frgbrkj3f6" path="res://kings-of-kings-lynn/KingsofKingsLynn.otf" id="2_64ctp"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_37p78")
+
+[node name="CoinLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 2.0
+offset_right = 49.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_64ctp")
+text = "LeCoins: 0"

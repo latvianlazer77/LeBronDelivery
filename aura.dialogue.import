@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dphbmd5kxo5tl"
+path="res://.godot/imported/aura.dialogue-44f596baadf0ba8a624cb72e7f72ccc0.tres"
+
+[deps]
+
+source_file="res://aura.dialogue"
+dest_files=["res://.godot/imported/aura.dialogue-44f596baadf0ba8a624cb72e7f72ccc0.tres"]
+
+[params]
+
+defaults=true

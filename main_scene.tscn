@@ -625,7 +625,7 @@ texture = ExtResource("1_2c62f")
 0:3/0 = 0
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:3/0 = 0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 0.719435, 8, -0.719435, 3.41732, -5.57562, 2.51802)
 2:3/0 = 0
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:3/0 = 0
@@ -633,7 +633,7 @@ texture = ExtResource("1_2c62f")
 4:3/0 = 0
 4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0 = 0
-5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 3.41732, 5.03605, -8, 8)
 6:3/0 = 0
 7:3/0 = 0
 8:3/0 = 0
@@ -655,11 +655,11 @@ texture = ExtResource("1_2c62f")
 0:4/0 = 0
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:4/0 = 0
-2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 0.719435, 8, -0.719435, 3.41732, -5.57562, 2.51802)
 3:4/0 = 0
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:4/0 = 0
-4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 5.39576, 1.97845, 0.359716, 4.49647, -2.33816, 8, -8, 8)
 5:4/0 = 0
 6:4/0 = 0
 7:4/0 = 0
@@ -833,6 +833,7 @@ texture = ExtResource("1_2c62f")
 10:10/0 = 0
 11:10/0 = 0
 12:10/0 = 0
+12:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:10/0 = 0
 15:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.5288, -3.59717, 1.16908, -8, 6.20513, -8, 6.20513, -5.03604, 4.22668, -0.179857, 0.629505, 8, -1.34894, 8, -3.6871, 6.29506, -4.5864, 5.57562, -5.30583, 4.85619)
 17:10/0 = 0
@@ -1020,9 +1021,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wr18j")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66tet"]
@@ -1037,19 +1038,15 @@ tile_map_data = PackedByteArray("AADz//P/AAAAAAAAAADz//T/AAAAAAEAAADz//X/AAAAAAI
 tile_set = SubResource("TileSet_hq1ik")
 
 [node name="trap" parent="." instance=ExtResource("2_nfk4m")]
-visible = false
 position = Vector2(290, -12)
 
 [node name="trap3" parent="." instance=ExtResource("2_nfk4m")]
-visible = false
 position = Vector2(334, -12)
 
 [node name="trap4" parent="." instance=ExtResource("2_nfk4m")]
-visible = false
 position = Vector2(377, -12)
 
 [node name="trap2" parent="." instance=ExtResource("2_nfk4m")]
-visible = false
 position = Vector2(247, -12)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -1068,20 +1065,22 @@ script = ExtResource("6_hq1ik")
 
 [node name="E" type="AnimatedSprite2D" parent="LeNPC"]
 texture_filter = 1
-position = Vector2(-39, 21)
+position = Vector2(-38.75, 14.5)
+scale = Vector2(0.794118, 0.8125)
 sprite_frames = SubResource("SpriteFrames_qwutr")
 autoplay = "default"
-frame = 1
-frame_progress = 1.0
+frame_progress = 0.823272
 
 [node name="Area2D" type="Area2D" parent="LeNPC"]
+position = Vector2(12, 5)
+priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeNPC/Area2D"]
-position = Vector2(-27.5, 23.5)
+position = Vector2(-38, 13)
 shape = SubResource("RectangleShape2D_66tet")
 
 [node name="Player" parent="." instance=ExtResource("2_gyfs4")]
-position = Vector2(0, -49)
+position = Vector2(-9, -20)
 
 [node name="Coin" parent="." instance=ExtResource("10_wr18j")]
 position = Vector2(157, -24)
@@ -1093,4 +1092,7 @@ position = Vector2(289, -124)
 
 [connection signal="area_entered" from="LeNPC/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="LeNPC/Area2D" to="LeNPC" method="_on_area_2d_area_entered"]
+[connection signal="area_shape_entered" from="LeNPC/Area2D" to="." method="_on_area_2d_area_shape_entered"]
 [connection signal="area_shape_entered" from="LeNPC/Area2D" to="LeNPC" method="_on_area_2d_area_shape_entered"]
+[connection signal="body_entered" from="LeNPC/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="LeNPC/Area2D" to="." method="_on_area_2d_body_exited"]

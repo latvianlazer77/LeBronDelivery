@@ -127,8 +127,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0k4wn")
 text = "Quit
 "
 
-[connection signal="pressed" from="mainbuttons/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="mainbuttons/start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="mainbuttons/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="mainbuttons/start" to="mainbuttons/start" method="_on_pressed"]
 [connection signal="pressed" from="mainbuttons/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="mainbuttons/quit" to="." method="_on_quit_pressed"]

@@ -1,25 +1,23 @@
 [gd_scene load_steps=8 format=3 uid="uid://c3qtiwtn655xi"]
 
-[ext_resource type="Script" uid="uid://b8xnpreht11fe" path="res://main_menu.gd" id="1_hhlqb"]
+[ext_resource type="Script" uid="uid://dr3gcpjyojawe" path="res://death_screen.gd" id="1_hhlqb"]
 [ext_resource type="Texture2D" uid="uid://ckjqhu4g013lv" path="res://lebrun.png" id="2_f562y"]
 [ext_resource type="Theme" uid="uid://tov66oq4gbks" path="res://lebrontheme.tres" id="3_s44ck"]
 [ext_resource type="FontFile" uid="uid://bk2frgbrkj3f6" path="res://kings-of-kings-lynn/KingsofKingsLynn.otf" id="4_nus4h"]
 [ext_resource type="AudioStream" uid="uid://cbtrqti041nj" path="res://Lebron James Song  R&B TikTok Song Lebron Lebron Lebron James.mp3" id="5_b1ui3"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qtwp"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0ggs"]
 bg_color = Color(1, 0.819608, 0.317647, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy7ct"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhlqb"]
 bg_color = Color(0.541176, 0.439216, 0.564706, 1)
 shadow_size = 5
 
-[node name="Death Screen" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("1_hhlqb")
 
 [node name="Panel" type="Panel" parent="."]
@@ -27,9 +25,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1110.0
+offset_bottom = 602.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8qtwp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_y0ggs")
 
 [node name="Lebrun" type="Sprite2D" parent="."]
 position = Vector2(575, 246)
@@ -42,10 +42,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -218.0
-offset_top = -32.5
-offset_right = 218.0
-offset_bottom = 244.5
+offset_left = 338.0
+offset_top = 271.5
+offset_right = 774.0
+offset_bottom = 548.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_s44ck")
@@ -57,7 +57,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_nus4h")
 theme_override_font_sizes/font_size = 75
-theme_override_styles/normal = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hhlqb")
 text = "play Again"
 
 [node name="Label" type="Label" parent="."]
@@ -65,9 +65,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -128.0
+offset_left = 428.0
 offset_top = 44.0
-offset_right = 360.0
+offset_right = 916.0
 offset_bottom = 149.0
 grow_horizontal = 2
 theme = ExtResource("3_s44ck")

@@ -76,6 +76,17 @@ theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_vomi7")
 text = "1"
 
+[node name="Coins1" type="Label" parent="LevelButtons/Button1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.008
+anchor_right = -0.008
+offset_left = 19.944
+offset_top = 121.0
+offset_right = 100.944
+offset_bottom = 144.0
+text = "Coins 0/10"
+
 [node name="Button2" type="Button" parent="LevelButtons"]
 layout_mode = 1
 anchors_preset = 4
@@ -94,6 +105,17 @@ theme_override_fonts/font = ExtResource("2_wevku")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_vomi7")
 text = "2"
+
+[node name="Coins2" type="Label" parent="LevelButtons/Button2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.008
+anchor_right = -0.008
+offset_left = 19.944
+offset_top = 121.0
+offset_right = 100.944
+offset_bottom = 144.0
+text = "Coins 0/10"
 
 [node name="Button3" type="Button" parent="LevelButtons"]
 layout_mode = 1
@@ -114,6 +136,17 @@ theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_vomi7")
 text = "3"
 
+[node name="Coins3" type="Label" parent="LevelButtons/Button3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.008
+anchor_right = -0.008
+offset_left = 19.944
+offset_top = 121.0
+offset_right = 100.944
+offset_bottom = 144.0
+text = "Coins 0/10"
+
 [node name="Button4" type="Button" parent="LevelButtons"]
 layout_mode = 1
 anchors_preset = 4
@@ -132,6 +165,17 @@ theme_override_fonts/font = ExtResource("2_wevku")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_vomi7")
 text = "4"
+
+[node name="Coins4" type="Label" parent="LevelButtons/Button4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.008
+anchor_right = -0.008
+offset_left = 19.944
+offset_top = 121.0
+offset_right = 100.944
+offset_bottom = 144.0
+text = "Coins 0/10"
 
 [node name="Button5" type="Button" parent="LevelButtons"]
 layout_mode = 1
@@ -152,6 +196,17 @@ theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_vomi7")
 text = "5"
 
+[node name="Coins5" type="Label" parent="LevelButtons/Button5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.008
+anchor_right = -0.008
+offset_left = 19.944
+offset_top = 121.0
+offset_right = 100.944
+offset_bottom = 144.0
+text = "Coins 0/10"
+
 [node name="Button6" type="Button" parent="LevelButtons"]
 layout_mode = 1
 anchors_preset = 4
@@ -170,5 +225,16 @@ theme_override_fonts/font = ExtResource("2_wevku")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxFlat_vomi7")
 text = "6"
+
+[node name="Coins6" type="Label" parent="LevelButtons/Button6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.008
+anchor_right = -0.008
+offset_left = 19.944
+offset_top = 121.0
+offset_right = 100.944
+offset_bottom = 144.0
+text = "Coins 0/10"
 
 [connection signal="pressed" from="LevelButtons/Button1" to="." method="_on_button_1_pressed"]

@@ -10,19 +10,24 @@ enum State { IDLE, RUNNING, JUMPING, CROUCHING, FALLING }
 #controller variables
 
 @export var speed: float = 150.0
-@export var jump_velocity: float = -450.0
-
+@export var jump_velocity: float = -310
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var current_state: State = State.IDLE
 var can_double_jump: bool = false
-var has_double_jummped: bool = false
+var has_double_jumped: bool = false
 
 @onready var normal_collision = $Normal
 @onready var crouch_collision = $Crouch
 @onready var animated_sprite = $AnimatedSprite2D
 
-
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("Dialogue"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -37,38 +42,25 @@ func handle_input():
 	var moving = Input.is_action_pressed(input_left) or Input.is_action_pressed(input_right)
 	var crouching = Input.is_action_pressed(input_crouch)
 	
-	
 	match current_state:
 		State.IDLE, State.RUNNING:
 			if not is_on_floor():
 				current_state = State.FALLING
 			elif Input.is_action_just_pressed(input_jump):
 				jump()
-			elif crouching:
-				start_crouch()
 			elif moving:
 				current_state = State.RUNNING
 			else:
 				current_state = State.IDLE
-				
-				
-				
 		State.JUMPING, State.FALLING:
-			if Input.is_action_just_pressed(input_jump) and can_double_jump:
+			if Input.is_action_just_pressed(input_jump) and can_double_jump and not has_double_jumped:
+				jump()
+				has_double_jumped = true
 				print("coo")
 			elif is_on_floor():
 				current_state = State.IDLE if abs(velocity.x) < 10 else State.RUNNING
-				
-		
-		
-		State.CROUCHING:
-			if Input.is_action_just_pressed(input_jump):
-				end_crouch()
-				jump()
-			elif not crouching or not is_on_floor():
-				end_crouch()
-				current_state = State.FALLING if not is_on_floor() else State.IDLE
-				
+				can_double_jump = true
+				has_double_jumped = false
 				
 func update_movement(delta):
 	var direction = Input.get_axis(input_left, input_right)
@@ -94,14 +86,8 @@ func play_animation():
 
 func jump():
 	velocity.y = jump_velocity
-	can_double_jump = true
+	if not has_double_jumped:
+		can_double_jump = true
+	else:
+		can_double_jump = false
 	current_state = State.JUMPING
-func start_crouch():
-	if is_on_floor():
-		normal_collision.disabled = true
-		crouch_collision.disabled = false
-		current_state = State.CROUCHING
-
-func end_crouch():
-	normal_collision.disabled = false
-	crouch_collision.disabled = true

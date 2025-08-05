@@ -1,12 +1,10 @@
 ~ start
-
-
-
-LeBron: Hello, It is me LEBRON!!!!
-LeBron: I need your help with something, I need you to deliver something.
-You: Ok, I understand LeBron!
-You: I will go to the other end of the world to deliver this my glorious king!
-
-
+LeBron: Hello, it is me, LEBRON!!!!
+You: Hello LeBron.
+LeBron: I need your help with something.
+You: What is it king?
+LeBron: I need you to collect and deliver my LeCoins
+- Consider it done King => END
+- No => start
 
 => END

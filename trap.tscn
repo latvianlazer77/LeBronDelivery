@@ -1,22 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlkunybsltlht"]
+[gd_scene load_steps=6 format=3 uid="uid://dlkunybsltlht"]
 
-[ext_resource type="Texture2D" uid="uid://5gqjvf6lk34n" path="res://free_trapassets/Trap_Spike.png" id="1_kd1db"]
 [ext_resource type="Script" uid="uid://c13wwpfg1prpn" path="res://trap.gd" id="1_w2pp3"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w2pp3"]
-atlas = ExtResource("1_kd1db")
-region = Rect2(0, 0, 128, 128)
+[ext_resource type="Texture2D" uid="uid://bcr4xw353kgu6" path="res://Super Mango Platformer Assets by JuhoSprite/Super Mango Platformer Assets by JuhoSprite/Spike.png" id="2_w2pp3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gix62"]
-atlas = ExtResource("1_kd1db")
-region = Rect2(128, 0, 128, 128)
+atlas = ExtResource("2_w2pp3")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bmoth"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w2pp3")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gix62")
 }],
@@ -33,9 +26,11 @@ script = ExtResource("1_w2pp3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0.5, 46)
+scale = Vector2(2.5625, 2.25)
 sprite_frames = SubResource("SpriteFrames_bmoth")
 autoplay = "default"
-frame_progress = 0.48498
+frame_progress = 0.483213
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 46.5)

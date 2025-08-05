@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://cqaj4s6ssmc44"]
+[gd_scene load_steps=17 format=3 uid="uid://cqaj4s6ssmc44"]
 
 [ext_resource type="Script" uid="uid://crcau88rwivwe" path="res://coin.gd" id="1_0t63x"]
 [ext_resource type="Texture2D" uid="uid://cx0f2v2r8dalb" path="res://brackeys_platformer_assets/brackeys_platformer_assets/sprites/coin.png" id="1_d5gmh"]
-[ext_resource type="AudioStream" uid="uid://c6t233rbqwxjq" path="res://FlightReacts Lebron.mp3" id="3_v7riw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0t63x"]
 atlas = ExtResource("1_d5gmh")
@@ -110,8 +109,5 @@ frame_progress = 0.504949
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_v7riw")
-
-[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_v7riw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1096,3 +1096,5 @@ position = Vector2(289, -124)
 [connection signal="area_shape_entered" from="LeNPC/Area2D" to="LeNPC" method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="LeNPC/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="LeNPC/Area2D" to="." method="_on_area_2d_body_exited"]
+
+[editable path="HUD"]

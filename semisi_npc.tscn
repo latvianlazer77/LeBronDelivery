@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://cbt6dpi1hltm0"]
+
+[ext_resource type="Texture2D" uid="uid://bsvhnak6lvrxi" path="res://semisi nonchalant.png" id="1_hd3ka"]
+[ext_resource type="Script" uid="uid://cn832fxgd5w5p" path="res://semisi_npc.gd" id="1_ohe31"]
+[ext_resource type="Texture2D" uid="uid://dvb7pk53nuam8" path="res://SimpleKeys/SimpleKeys/Classic/Light/Spritesheets/E.png" id="3_sakra"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j31us"]
+atlas = ExtResource("1_hd3ka")
+region = Rect2(0, 0, 309, 550)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ohe31"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j31us")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ycvg"]
+atlas = ExtResource("3_sakra")
+region = Rect2(0, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr18j"]
+atlas = ExtResource("3_sakra")
+region = Rect2(17, 0, 17, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f085n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ycvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wr18j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2fbe"]
+size = Vector2(47, 41)
+
+[node name="SemisiNPC" type="Node2D"]
+script = ExtResource("1_ohe31")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-22, 19)
+scale = Vector2(0.182039, 0.0663636)
+sprite_frames = SubResource("SpriteFrames_ohe31")
+frame_progress = 0.0479909
+
+[node name="E" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-38.75, 14.5)
+scale = Vector2(0.794118, 0.8125)
+sprite_frames = SubResource("SpriteFrames_f085n")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(12, 5)
+priority = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-38, 13)
+shape = SubResource("RectangleShape2D_x2fbe")

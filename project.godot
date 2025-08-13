@@ -34,6 +34,10 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 api_token="https://openrouter.ai/"
 
+[global_group]
+
+player=""
+
 [input]
 
 Dialogue={

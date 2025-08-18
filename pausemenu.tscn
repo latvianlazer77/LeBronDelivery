@@ -94,7 +94,9 @@ text = "Main Menu
 "
 
 [connection signal="pressed" from="optionspanel/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="mainbuttons/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="mainbuttons/resume" to="mainbuttons/resume" method="_on_pressed"]
+[connection signal="toggled" from="mainbuttons/resume" to="." method="_on_resume_toggled"]
 [connection signal="pressed" from="mainbuttons/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="mainbuttons/quit" to="." method="_on_quit_pressed"]
 

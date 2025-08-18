@@ -1,35 +1,55 @@
 extends Node
 
+var current_level = 0
+var unlocked_levels = [0] # Level 0 = Level 1
+var pause_menu = null
+
+var level_1_score = 0
+
+
+# --- add these ---
 var coins: int = 0
-var unlocked_levels = [0] # Only Level 1 unlocked at start
-var current_level: int = -1
+var coins_per_level: Array = [0, 0, 0, 0, 0, 0]  # one entry per level
+# --- end add ---
 
-signal coins_changed(new_amount)
+func _ready():
+	print("Global autoload loaded")
+	# Add pause menu
+	pause_menu = preload("res://pausemenu.tscn").instantiate()
+	add_child(pause_menu)
+	pause_menu.visible = false
 
-func load_level(index: int):
-	if index in unlocked_levels:
-		current_level = index
-		coins = 0
-		emit_signal("coins_changed", coins)
-		var path = "res://level_%d.tscn" % (index + 1)
-		if ResourceLoader.exists(path):
-			get_tree().change_scene_to_file(path)
-		else:
-			print("Level scene not found:", path)
+func _input(event):
+	if Input.is_action_just_pressed("pause_game"):
+		# Prevent pause in main menu
+		if get_tree().current_scene.name != "main_menu":
+			if pause_menu.visible:
+				resume_game()
+			else:
+				pause_game()
+
+func pause_game():
+	pause_menu.visible = true
+	get_tree().paused = true
+
+func resume_game():
+	pause_menu.visible = false
+	get_tree().paused = false
+
+func load_level(level_index: int):
+	var level_paths = [
+		"res://level_1.tscn",
+		"res://level_2.tscn",
+		"res://level_3.tscn",
+		"res://level_4.tscn",
+		"res://level_5.tscn",
+		"res://level_6.tscn",
+	]
+	if level_index >= 0 and level_index < level_paths.size():
+		get_tree().change_scene_to_file(level_paths[level_index])
+		current_level = level_index
 	else:
-		print("Level is locked:", index + 1)
+		print("Invalid level index:", level_index)
 
-func add_coin(amount: int = 1):
-	coins += amount
-	emit_signal("coins_changed", coins)
-
-func finish_level():
-	print("Level", current_level + 1, "finished!")
-	if current_level + 1 not in unlocked_levels:
-		unlocked_levels.append(current_level + 1)
-
-	coins = 0
-	emit_signal("coins_changed", coins)
-
-	# Change back to level select
-	get_tree().change_scene_to_file("res://level_select.tscn")
+func add_coin():
+	coins = coins + 1

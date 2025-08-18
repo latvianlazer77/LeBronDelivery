@@ -33,19 +33,7 @@ tile_map_data = PackedByteArray("AAD/////AQACAAAAAAAAAP//AQADAAAAAAABAP//AQADAAA
 [node name="LeNPC" parent="Main Scene" index="7"]
 metadata/_edit_lock_ = true
 
-[node name="LeNPC2" parent="Main Scene" instance=ExtResource("2_5rr72")]
-position = Vector2(-296, -60)
-script = ExtResource("3_gyffv")
-
-[node name="AnimatedSprite2D" parent="Main Scene/LeNPC2" index="0"]
-visible = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Main Scene/LeNPC2"]
-position = Vector2(-18, 33)
-scale = Vector2(0.0930421, 0.0463636)
-texture = ExtResource("5_gyffv")
-
-[node name="Player" parent="Main Scene" index="9"]
+[node name="Player" parent="Main Scene" index="8"]
 position = Vector2(17, -19)
 
 [node name="Camera2D" parent="Main Scene/Player" index="0"]
@@ -65,6 +53,18 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="Main Scene/Player/Direction/ActionableFinder" index="0"]
 metadata/_edit_lock_ = true
+
+[node name="LeNPC2" parent="Main Scene" instance=ExtResource("2_5rr72")]
+position = Vector2(-296, -60)
+script = ExtResource("3_gyffv")
+
+[node name="AnimatedSprite2D" parent="Main Scene/LeNPC2" index="0"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Main Scene/LeNPC2"]
+position = Vector2(-18, 33)
+scale = Vector2(0.0930421, 0.0463636)
+texture = ExtResource("5_gyffv")
 
 [node name="Area2D" type="Area2D" parent="Main Scene"]
 script = ExtResource("2_hbghi")
@@ -126,6 +126,6 @@ position = Vector2(1492, -27)
 [connection signal="area_entered" from="Coin" to="Coin" method="_on_area_entered"]
 
 [editable path="Main Scene"]
-[editable path="Main Scene/LeNPC2"]
 [editable path="Main Scene/Player"]
 [editable path="Main Scene/HUD"]
+[editable path="Main Scene/LeNPC2"]

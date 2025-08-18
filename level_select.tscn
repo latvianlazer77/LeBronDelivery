@@ -240,6 +240,7 @@ offset_bottom = 144.0
 text = "Coins 0/10"
 
 [node name="Back" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5

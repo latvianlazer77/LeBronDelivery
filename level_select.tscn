@@ -83,11 +83,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.008
 anchor_right = -0.008
-offset_left = 19.944
+offset_left = 34.944
 offset_top = 121.0
-offset_right = 100.944
+offset_right = 115.944
 offset_bottom = 144.0
-text = "Coins 0/10"
+text = "0/10"
 
 [node name="Button2" type="Button" parent="LevelButtons"]
 layout_mode = 1
@@ -113,11 +113,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.008
 anchor_right = -0.008
-offset_left = 19.944
+offset_left = 40.944
 offset_top = 121.0
-offset_right = 100.944
+offset_right = 121.944
 offset_bottom = 144.0
-text = "Coins 0/10"
+text = "0/10"
 
 [node name="Button3" type="Button" parent="LevelButtons"]
 layout_mode = 1
@@ -143,11 +143,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.008
 anchor_right = -0.008
-offset_left = 19.944
+offset_left = 38.944
 offset_top = 121.0
-offset_right = 100.944
+offset_right = 119.944
 offset_bottom = 144.0
-text = "Coins 0/10"
+text = "0/10"
 
 [node name="Button4" type="Button" parent="LevelButtons"]
 layout_mode = 1
@@ -173,11 +173,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.008
 anchor_right = -0.008
-offset_left = 19.944
+offset_left = 38.944
 offset_top = 121.0
-offset_right = 100.944
+offset_right = 119.944
 offset_bottom = 144.0
-text = "Coins 0/10"
+text = "0/10"
 
 [node name="Button5" type="Button" parent="LevelButtons"]
 layout_mode = 1
@@ -203,11 +203,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.008
 anchor_right = -0.008
-offset_left = 19.944
+offset_left = 41.944
 offset_top = 121.0
-offset_right = 100.944
+offset_right = 122.944
 offset_bottom = 144.0
-text = "Coins 0/10"
+text = "0/10"
 
 [node name="Button6" type="Button" parent="LevelButtons"]
 layout_mode = 1
@@ -261,6 +261,6 @@ text = "Back"
 script = ExtResource("3_wevku")
 
 [connection signal="pressed" from="LevelButtons/Button1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="Back" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

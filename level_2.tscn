@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://4yd17pdgejjo"]
+[gd_scene load_steps=21 format=4 uid="uid://4yd17pdgejjo"]
 
 [ext_resource type="Texture2D" uid="uid://blijg2bcw4is0" path="res://Tiles/Tiles/Assets/Background_2.png" id="1_15wb7"]
 [ext_resource type="Texture2D" uid="uid://dp662i7kai4tu" path="res://Tiles/Tiles/Assets/Background_1.png" id="2_7j8ne"]
@@ -10,8 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cqaj4s6ssmc44" path="res://coin.tscn" id="9_15wb7"]
 [ext_resource type="PackedScene" uid="uid://oluwgxm6eca0" path="res://hud.tscn" id="10_5hnhx"]
 [ext_resource type="Script" uid="uid://c3jdvb58eshmh" path="res://death.gd" id="10_15wb7"]
+[ext_resource type="PackedScene" uid="uid://biyac58fgr7ab" path="res://pause2.tscn" id="11_eoq84"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7j8ne"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eoq84"]
 texture = ExtResource("1_15wb7")
 0:0/0 = 0
 1:0/0 = 0
@@ -541,7 +542,7 @@ texture = ExtResource("1_15wb7")
 29:16/0 = 0
 30:16/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7dov7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yl73a"]
 texture = ExtResource("2_7j8ne")
 0:0/0 = 0
 1:0/0 = 0
@@ -930,7 +931,7 @@ texture = ExtResource("2_7j8ne")
 29:16/0 = 0
 30:16/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_15wb7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xbcdb"]
 texture = ExtResource("3_eoq84")
 2:0/0 = 0
 3:0/0 = 0
@@ -1271,11 +1272,11 @@ texture = ExtResource("3_eoq84")
 24:24/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_7dov7"]
-sources/0 = SubResource("TileSetAtlasSource_7j8ne")
-sources/1 = SubResource("TileSetAtlasSource_7dov7")
-sources/2 = SubResource("TileSetAtlasSource_15wb7")
+sources/0 = SubResource("TileSetAtlasSource_eoq84")
+sources/1 = SubResource("TileSetAtlasSource_yl73a")
+sources/2 = SubResource("TileSetAtlasSource_xbcdb")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ehv2h"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s77qv"]
 texture = ExtResource("3_eoq84")
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -1734,9 +1735,9 @@ texture = ExtResource("3_eoq84")
 
 [sub_resource type="TileSet" id="TileSet_15wb7"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_ehv2h")
+sources/1 = SubResource("TileSetAtlasSource_s77qv")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eoq84"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hnhx"]
 texture = ExtResource("3_eoq84")
 2:0/0 = 0
 3:0/0 = 0
@@ -2077,7 +2078,7 @@ texture = ExtResource("3_eoq84")
 24:24/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_yl73a"]
-sources/0 = SubResource("TileSetAtlasSource_eoq84")
+sources/0 = SubResource("TileSetAtlasSource_5hnhx")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eoq84"]
 distance = -2.0
@@ -2128,7 +2129,7 @@ position = Vector2(54, 1010)
 texture = ExtResource("4_yl73a")
 
 [node name="Player" parent="." instance=ExtResource("8_s77qv")]
-position = Vector2(14, -36)
+position = Vector2(0, -46)
 
 [node name="Camera2D" parent="Player" index="0"]
 metadata/_edit_lock_ = true
@@ -2195,7 +2196,11 @@ position = Vector2(557, 187)
 position = Vector2(894, 53)
 
 [node name="DeliveryZone2" parent="." instance=ExtResource("6_0s5r2")]
-position = Vector2(971, 52)
+position = Vector2(959, 45)
+scale = Vector2(3.28034, -1.59454)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("11_eoq84")]
+visible = false
 
 [connection signal="body_entered" from="Death" to="Death" method="_on_body_entered"]
 

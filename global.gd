@@ -3,13 +3,12 @@ extends Node
 signal coins_changed
 
 var current_level: int = 0
-var level_1_unlocked: bool = true  # Level 1 is unlocked by default
+var level_1_unlocked: bool = true
 var level_2_unlocked: bool = false
 var level_3_unlocked: bool = false
 var level_4_unlocked: bool = false
 var level_5_unlocked: bool = false
 var level_6_unlocked: bool = false
-var pause_menu: CanvasLayer = null
 
 var coins: int = 0
 var coins_per_level: Array = [0, 0, 0, 0, 0, 0]
@@ -17,40 +16,6 @@ var coins_per_level: Array = [0, 0, 0, 0, 0, 0]
 func _ready():
 	print("Global autoload loaded")
 	load_game()
-	pause_menu = preload("res://pausemenu.tscn").instantiate()
-	add_child(pause_menu)
-	pause_menu.visible = false
-	if pause_menu.has_node("ResumeButton"):
-		pause_menu.get_node("ResumeButton").pressed.connect(resume_game)
-	if pause_menu.has_node("QuitButton"):
-		pause_menu.get_node("QuitButton").pressed.connect(_on_quit_pressed)
-	if pause_menu.has_node("MainMenuButton"):
-		pause_menu.get_node("MainMenuButton").pressed.connect(_on_main_menu_pressed)
-
-func _input(event):
-	if Input.is_action_just_pressed("pause_game"):
-		if get_tree().current_scene.name != "main_menu":
-			if pause_menu.visible:
-				resume_game()
-			else:
-				pause_game()
-
-func pause_game():
-	pause_menu.visible = true
-	get_tree().paused = true
-
-func resume_game():
-	pause_menu.visible = false
-	get_tree().paused = false
-
-func _on_quit_pressed():
-	save_game()
-	get_tree().quit()
-
-func _on_main_menu_pressed():
-	save_game()
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://main_menu.tscn")
 
 func load_level(level_index: int):
 	var level_paths = [

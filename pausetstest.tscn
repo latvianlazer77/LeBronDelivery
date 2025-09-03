@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8vnouogh8bhc"]
+
+[ext_resource type="Script" uid="uid://dg0hvydsgxgkw" path="res://pausemenu.gd" id="1_00aqk"]
+[ext_resource type="Theme" uid="uid://tov66oq4gbks" path="res://lebrontheme.tres" id="2_e3p3o"]
+[ext_resource type="PackedScene" uid="uid://ddv2cjlcpdikw" path="res://options.tscn" id="3_6t64f"]
+[ext_resource type="FontFile" uid="uid://bk2frgbrkj3f6" path="res://kings-of-kings-lynn/KingsofKingsLynn.otf" id="4_pneaf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7fcu"]
+bg_color = Color(1, 0.819608, 0.317647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifua1"]
+bg_color = Color(0.541176, 0.439216, 0.564706, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bywfp"]
+bg_color = Color(0.541176, 0.439216, 0.564706, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ennqi"]
+bg_color = Color(0.541176, 0.439216, 0.564706, 1)
+shadow_size = 5
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_00aqk")
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v7fcu")
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -233.0
+offset_top = 56.0
+offset_right = 255.0
+offset_bottom = 161.0
+grow_horizontal = 2
+theme = ExtResource("2_e3p3o")
+theme_override_colors/font_color = Color(0.541176, 0.439216, 0.564706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 100
+text = "       Paused"
+
+[node name="optionspanel" parent="." instance=ExtResource("3_6t64f")]
+
+[node name="mainbuttons" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -32.5
+offset_right = 218.0
+offset_bottom = 244.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_e3p3o")
+theme_override_constants/separation = 20
+
+[node name="resume" type="Button" parent="mainbuttons"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_pneaf")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_ifua1")
+text = "Resume"
+
+[node name="options" type="Button" parent="mainbuttons"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_pneaf")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_bywfp")
+text = "Options
+"
+
+[node name="quit" type="Button" parent="mainbuttons"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_pneaf")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_ennqi")
+text = "Main Menu
+"
+
+[connection signal="pressed" from="optionspanel/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="mainbuttons/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="mainbuttons/resume" to="mainbuttons/resume" method="_on_pressed"]
+[connection signal="toggled" from="mainbuttons/resume" to="." method="_on_resume_toggled"]
+[connection signal="pressed" from="mainbuttons/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="mainbuttons/quit" to="." method="_on_quit_pressed"]
+
+[editable path="optionspanel"]

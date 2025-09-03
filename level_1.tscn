@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cg6bl11s7pijr"]
+[gd_scene load_steps=13 format=4 uid="uid://cg6bl11s7pijr"]
 
 [ext_resource type="PackedScene" uid="uid://dcd7r10daw63n" path="res://main_scene.tscn" id="1_3hls8"]
 [ext_resource type="PackedScene" uid="uid://wercq5w2wl8u" path="res://le_npc.tscn" id="2_5rr72"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bsvhnak6lvrxi" path="res://semisi nonchalant.png" id="5_gyffv"]
 [ext_resource type="PackedScene" uid="uid://dlkunybsltlht" path="res://trap.tscn" id="5_rka8t"]
 [ext_resource type="PackedScene" uid="uid://bnunkf23dbu6x" path="res://delivery_zone.tscn" id="6_5hph3"]
+[ext_resource type="PackedScene" uid="uid://biyac58fgr7ab" path="res://pause2.tscn" id="10_gyffv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3hls8"]
 distance = -2.0
@@ -123,6 +124,8 @@ position = Vector2(1445, -26)
 
 [node name="DeliveryZone" parent="." instance=ExtResource("6_5hph3")]
 position = Vector2(1492, -27)
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("10_gyffv")]
 
 [connection signal="area_exited" from="Main Scene/LeNPC/Area2D" to="Main Scene/LeNPC" method="_on_area_2d_area_exited"]
 [connection signal="body_entered" from="Main Scene/LeNPC/Area2D" to="Main Scene/LeNPC" method="_on_area_2d_body_entered"]
